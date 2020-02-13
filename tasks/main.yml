@@ -1,0 +1,12 @@
+- name: Install RabbmitMQ
+  yum: name=rabbitmq-server state=installed
+
+- name: Enable Management Plugin
+  rabbitmq_plugin: names=rabbitmq_management state=enabled
+
+- name: Enable RabbitMQ Service
+  service: name=rabbitmq-server enabled=yes
+
+- name: Start RabbitMQ Server
+  service: name=rabbitmq-server state=started
+

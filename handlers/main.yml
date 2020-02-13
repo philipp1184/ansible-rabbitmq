@@ -1,0 +1,6 @@
+- name: reload systemd
+  shell: systemctl daemon-reload
+
+- name: restart rabbitmq
+  service: name=rabbitmq-server state=restarted
+
